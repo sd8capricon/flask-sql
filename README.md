@@ -14,7 +14,7 @@
 ### Install Flask
 - windows - `pip install Flask`
 - ubuntu - `pip install Flask`
-- If you get error: Command 'pip' not found
+- If you get error on ubuntu: Command 'pip' not found
 run `sudo apt install python3-pip`
 
 ### Run App
