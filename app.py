@@ -6,35 +6,23 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    try:
-        data = get_reviews()
-        return render_template('index.html', data=data)
-    except Exception as e:
-        return {'error': e}
+    return "Hello World"
+    # return render_template("index.html")
 
 
 @app.route('/create-review', methods=['POST'])
 def create():
-    restaurant = request.form['restaurant']
-    review = request.form['review']
-    try:
-        create_review(restaurant, review)
-        return redirect('/')
-    except Exception as e:
-        return {'error': e}
+    pass
 
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     if request.method == 'POST':
-        update_review(id, request.form['restaurant'], request.form['review'])
-        return redirect('/')
+        pass
     else:
-        restaurant = get_restaurant(id)
-        return render_template('update.html', data=restaurant)
+        pass
 
 
 @app.route('/delete/<int:id>', methods=['GET'])
 def delete(id):
-    delete_review(id)
-    return redirect('/')
+    pass

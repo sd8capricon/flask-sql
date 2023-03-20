@@ -1,5 +1,7 @@
 import sqlite3
 
+# Helper function to run app
+
 
 def execute_query(query):
     conn = sqlite3.connect('database.db')
@@ -8,40 +10,42 @@ def execute_query(query):
     return res
 
 
+# Returns a list of all restaurant reviews
+
+
 def get_reviews():
-    reviews = execute_query("SELECT * FROM REVIEWS;").fetchall()
+    reviews = execute_query("select * from reviews;").fetchall()
     data = []
-    temp = {}
-    for i in reviews:
-        temp['id'] = i[0]
-        temp["restaurant"] = i[1]
-        temp["review"] = i[2]
-        data.append(temp)
-        temp = {}
-    return data
+    print(reviews)
+
+# To write a review
 
 
-def create_review(restaurant, review):
-    print(
-        f"INSERT INTO REVIEWS(restaurant, review) VALUES('{restaurant}', '{review}');")
-    execute_query(
-        f"INSERT INTO REVIEWS(restaurant, review) VALUES('{restaurant}', '{review}');")
+def create_review(name, review):
+    # insert into reviews(name, review) values(name, review);
+    pass
+
+
+# To change existing review values
 
 
 def update_review(id, restaurant, review):
-    print(
-        f"UPDATE REVIEWS SET restaurant = '{restaurant}', review = '{review}' WHERE id='{id}';")
-    execute_query(
-        f"UPDATE REVIEWS SET restaurant = '{restaurant}', review = '{review}' WHERE id='{id}';")
+    # update reviews set name = 'new value', review='new value' where id=existing_id;
+    pass
 
+
+# To delete a review
 
 def delete_review(id):
-    execute_query(f"DELETE FROM REVIEWS WHERE id='{id}';")
+    # delete from reviews where id=existing_id;
+    pass
+
+# Funcion to get restaurant by id
 
 
 def get_restaurant(id):
     restaurant = execute_query(
-        f"SELECT * FROM REVIEWS WHERE id='{id}';").fetchone()
+        f"select * from reviews where id='{id}';").fetchone()
     temp = {'id': restaurant[0],
             'restaurant': restaurant[1], 'review': restaurant[2]}
     return temp
