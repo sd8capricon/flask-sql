@@ -7,7 +7,6 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return "Hello World"
-    # return render_template("index.html")
 
 
 @app.route('/create-review', methods=['POST'])
