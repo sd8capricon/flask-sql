@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>{{data['restaurant']}}'s Review</h1>
+    <h1>{{data['name']}}'s Review</h1>
     <form action="/update/{{data['id']}}" method="post">
         <label for="restaurant">Restaurant Name: </label><br>
         <input type="text" name="name" value="{{data['name']}}">
