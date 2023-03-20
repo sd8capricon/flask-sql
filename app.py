@@ -27,7 +27,7 @@ def create():
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     if request.method == 'POST':
-        update_review(id, request.form['review'])
+        update_review(id, request.form['restaurant'], request.form['review'])
         return redirect('/')
     else:
         restaurant = get_restaurant(id)

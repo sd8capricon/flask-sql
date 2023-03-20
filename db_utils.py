@@ -28,10 +28,11 @@ def create_review(restaurant, review):
         f"INSERT INTO REVIEWS(restaurant, review) VALUES('{restaurant}', '{review}');")
 
 
-def update_review(id, review):
-    print(f"UPDATE REVIEWS SET review = '{review}' WHERE id='{id}';")
+def update_review(id, restaurant, review):
+    print(
+        f"UPDATE REVIEWS SET restaurant = '{restaurant}', review = '{review}' WHERE id='{id}';")
     execute_query(
-        f"UPDATE REVIEWS SET review = '{review}' WHERE id='{id}';")
+        f"UPDATE REVIEWS SET restaurant = '{restaurant}', review = '{review}' WHERE id='{id}';")
 
 
 def delete_review(id):
