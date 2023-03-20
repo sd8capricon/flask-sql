@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>{{data['restaurant']}}'s Review</h1>
+    <form action="/update/{{data['id']}}" method="post">
+        <label for="restaurant">Restaurant Name: </label><br>
+        <input type="text" name="restaurant" value="{{data['restaurant']}}" disabled>
+        <br><br>
+        <label for="review">Your Review</label><br>
+        <textarea type="text" name="review" cols="50" rows="10">{{data['review']}}</textarea>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
