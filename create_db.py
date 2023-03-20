@@ -8,5 +8,6 @@ try:
         """create table reviews ();"""
     )
     conn.commit()
+    print("Create Table reviews")
 except Exception as e:
     print(e)
