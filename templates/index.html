@@ -12,7 +12,7 @@
     <h2>Review a Restaurant that you have visited</h2>
     <form action="/create-review" method="post">
         <label for="restaurant">Restaurant Name: </label><br>
-        <input type="text" name="restaurant">
+        <input type="text" name="name">
         <br><br>
         <label for="review">Your Review</label><br>
         <textarea type="text" name="review" cols="50" rows="10"></textarea>
@@ -32,7 +32,7 @@
         {% for item in data %}
         <tr>
             <td>{{item['id']}}</td>
-            <td>{{item['restaurant']}}</td>
+            <td>{{item['name']}}</td>
             <td>{{item['review']}}</td>
             <td><a href="/update/{{item['id']}}">Edit</a></td>
             <td><a href="/delete/{{item['id']}}">Delete</a></td>

@@ -15,10 +15,10 @@ def index():
 
 @app.route('/create-review', methods=['POST'])
 def create():
-    restaurant = request.form['restaurant']
+    name = request.form['name']
     review = request.form['review']
     try:
-        create_review(restaurant, review)
+        create_review(name, review)
         return redirect('/')
     except Exception as e:
         return {'error': e}
@@ -27,7 +27,7 @@ def create():
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     if request.method == 'POST':
-        update_review(id, request.form['restaurant'], request.form['review'])
+        update_review(id, request.form['name'], request.form['review'])
         return redirect('/')
     else:
         restaurant = get_restaurant(id)

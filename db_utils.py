@@ -9,39 +9,39 @@ def execute_query(query):
 
 
 def get_reviews():
-    reviews = execute_query("SELECT * FROM REVIEWS;").fetchall()
+    reviews = execute_query("select * from reviews;").fetchall()
     data = []
     temp = {}
     for i in reviews:
         temp['id'] = i[0]
-        temp["restaurant"] = i[1]
+        temp["name"] = i[1]
         temp["review"] = i[2]
         data.append(temp)
         temp = {}
     return data
 
 
-def create_review(restaurant, review):
+def create_review(name, review):
     print(
-        f"INSERT INTO REVIEWS(restaurant, review) VALUES('{restaurant}', '{review}');")
+        f"insert into reviews(name, review) values('{name}', '{review}');")
     execute_query(
-        f"INSERT INTO REVIEWS(restaurant, review) VALUES('{restaurant}', '{review}');")
+        f"insert into reviews(name, review) values('{name}', '{review}');")
 
 
-def update_review(id, restaurant, review):
+def update_review(id, name, review):
     print(
-        f"UPDATE REVIEWS SET restaurant = '{restaurant}', review = '{review}' WHERE id='{id}';")
+        f"update reviews set name = '{name}', review = '{review}' where id='{id}';")
     execute_query(
-        f"UPDATE REVIEWS SET restaurant = '{restaurant}', review = '{review}' WHERE id='{id}';")
+        f"update reviews set name = '{name}', review = '{review}' where id='{id}';")
 
 
 def delete_review(id):
-    execute_query(f"DELETE FROM REVIEWS WHERE id='{id}';")
+    execute_query(f"delete from reviews where id='{id}';")
 
 
 def get_restaurant(id):
     restaurant = execute_query(
-        f"SELECT * FROM REVIEWS WHERE id='{id}';").fetchone()
+        f"select * from reviews where id='{id}';").fetchone()
     temp = {'id': restaurant[0],
-            'restaurant': restaurant[1], 'review': restaurant[2]}
+            'name': restaurant[1], 'review': restaurant[2]}
     return temp

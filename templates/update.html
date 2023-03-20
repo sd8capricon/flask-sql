@@ -12,7 +12,7 @@
     <h1>{{data['restaurant']}}'s Review</h1>
     <form action="/update/{{data['id']}}" method="post">
         <label for="restaurant">Restaurant Name: </label><br>
-        <input type="text" name="restaurant" value="{{data['restaurant']}}">
+        <input type="text" name="name" value="{{data['name']}}">
         <br><br>
         <label for="review">Your Review</label><br>
         <textarea type="text" name="review" cols="50" rows="10">{{data['review']}}</textarea>
