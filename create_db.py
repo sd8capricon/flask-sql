@@ -3,13 +3,9 @@ import sqlite3
 conn = sqlite3.connect('database.db')  # database location
 
 try:
-    # Create a table
+    # Create a table with cols id(pk, autoinc), name, review
     conn.execute(
-        """create table reviews (
-                id integer primary key autoincrement,
-                name varchar(50) not null,
-                review varchar(200) not null
-            );"""
+        """create table reviews ();"""
     )
     conn.commit()
 except Exception as e:
