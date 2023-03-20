@@ -15,6 +15,7 @@ def execute_query(query):
 
 def get_reviews():
     reviews = execute_query("select * from reviews;").fetchall()
+    # fetchall returns all rows of the result
     data = []
     print(reviews)
 
@@ -46,6 +47,7 @@ def delete_review(id):
 def get_restaurant(id):
     restaurant = execute_query(
         f"select * from reviews where id='{id}';").fetchone()
+    # fetchone returns first row of the result
     temp = {'id': restaurant[0],
             'restaurant': restaurant[1], 'review': restaurant[2]}
     return temp
