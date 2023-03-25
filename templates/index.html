@@ -29,14 +29,15 @@
             <th>Edit</th>
             <th>Delete</th>
         </tr>
-        <!-- use for loop -->
-        <!-- <tr>
+        {% for item in data %}
+        <tr>
             <td>{{item['id']}}</td>
             <td>{{item['name']}}</td>
             <td>{{item['review']}}</td>
             <td><a href="/update/{{item['id']}}">Edit</a></td>
             <td><a href="/delete/{{item['id']}}">Delete</a></td>
-        </tr> -->
+        </tr>
+        {%endfor%}
     </table>
 </body>
 
